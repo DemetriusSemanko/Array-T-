@@ -1,3 +1,18 @@
+/**
+ * Author: Demetrius Semanko
+ * 
+ * Purpose: Assuming we do not have access to any arrays or Collections,
+ * let's represent a generic Array data structure using only the Stack
+ * object.
+ * 
+ * Prompt (from David G. Cooper): Imagine that someone wrote java 
+ * without arrays and without the Collection framework. 
+ * Instead the only Generic Data Structure Type was a Stack.
+ * 
+ * Write a class called Array<T> that uses Stack objects 
+ * and any primitive types needed to implement an array of T's.
+ */
+
 import java.util.Stack;
 
 public class Array<T> {
