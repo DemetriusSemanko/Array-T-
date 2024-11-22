@@ -1,12 +1,8 @@
 import java.util.Stack;
 
 public class Array<T> {
-    private int length;
-    private Stack<T> stack;
-
-    public Array<T>() {
-        stack = new Stack<>();
-    }
+    private int length = 0;
+    private Stack<T> stack = new Stack<>();
 
     public int length() {
         return length;
@@ -19,10 +15,10 @@ public class Array<T> {
                 temp.push(stack.pop());
             }
             stack.push(item);
-            length++;
             for (int i = 1; i <= length - index; ++i) {
                 stack.push(temp.pop());
             }
+            length++;
             return true;
         }
         return false;
@@ -31,11 +27,11 @@ public class Array<T> {
     public T at(int index) {
         if (index >= 0 && index < length) {
             Stack<T> temp = new Stack<>();
-            for (int i = 1; i <= length - index; ++i) {
+            for (int i = 1; i <= length - index - 1; ++i) {
                 temp.push(stack.pop());
             }
             T item = stack.peek();
-            for (int i = 1; i <= length - index; ++i) {
+            for (int i = 1; i <= length - index - 1; ++i) {
                 stack.push(temp.pop());
             }
             return item;
