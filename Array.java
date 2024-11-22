@@ -13,13 +13,13 @@ public class Array<T> {
     }
 
     public boolean at(int index, T item) {
-        if (index >= 0 && index <= size) {
+        if (index >= 0 && index <= length) {
             Stack<T> temp = new Stack<>();
             for (int i = 1; i <= length - index; ++i) {
                 temp.push(stack.pop());
             }
             stack.push(item);
-            size++;
+            length++;
             for (int i = 1; i <= length - index; ++i) {
                 stack.push(temp.pop());
             }
@@ -29,13 +29,13 @@ public class Array<T> {
     }
 
     public T at(int index) {
-        if (index >= 0 && index < size) {
+        if (index >= 0 && index < length) {
             Stack<T> temp = new Stack<>();
-            for (int i = 1; i <= size - index; ++i) {
+            for (int i = 1; i <= length - index; ++i) {
                 temp.push(stack.pop());
             }
             T item = stack.peek();
-            for (int i = 1; i <= size - index; ++i) {
+            for (int i = 1; i <= length - index; ++i) {
                 stack.push(temp.pop());
             }
             return item;
